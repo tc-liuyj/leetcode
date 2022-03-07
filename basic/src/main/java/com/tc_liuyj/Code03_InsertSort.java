@@ -1,4 +1,4 @@
-package com.tc_liuyj.basic;
+package com.tc_liuyj;
 
 /**
  * 插入排序

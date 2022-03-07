@@ -1,4 +1,4 @@
-package com.tc_liuyj.basic;
+package com.tc_liuyj;
 
 import java.util.Arrays;
 
