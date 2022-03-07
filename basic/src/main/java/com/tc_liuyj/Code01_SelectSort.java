@@ -19,7 +19,7 @@ public class Code01_SelectSort {
         /**
          *
          * 假设N个元素
-         * 第0次： 在 0 到 n-1的元素 中找到最小的元素的位置，放到0的位置
+         * 第0次： 在 0 到 n-1的元素 中找到最小的元素的位置(需要记录最小的位置，O（1)的空间复杂度），放到0的位置
          *
          * 第1次： 在 1 到 n-1的元素 中找到最小的元素的位置，放到1的位置
          *
@@ -38,25 +38,28 @@ public class Code01_SelectSort {
          *
          * 总共N次
          */
-        // i 从 0 到  n-2
-        for (int i = 0; i < arr.length - 1; i++) {
-            //
+        // 控制第0次到第n-2次， 可以从[0,n-1) 也可以从(n-1, 0] 具体选用那种，需要根据场景来选择
+        for (int i = 0; i < arr.length - 1 ; i++) {
+            // 在[i, n-1]中找到最小值， 需要一个minIndex来记录最小的位置，O(1)的空间复杂度，
             int minIndex = i;
-            for (int j = i + 1; j < arr.length; j ++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 minIndex = arr[j] < arr[minIndex] ? j : minIndex;
-
             }
+            // 找到最小位置，交换位置
             swap(arr, i, minIndex);
         }
     }
 
     /**
      * 交换i位置与j位置的数据
-     * @param arr
-     * @param i
-     * @param j
+     * @param arr 需要交换的数组
+     * @param i 交换位置的索引
+     * @param j 交换位置的索引
      */
     private static void swap(int[] arr, int i, int j) {
+        if (i == j) {
+            return;
+        }
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
