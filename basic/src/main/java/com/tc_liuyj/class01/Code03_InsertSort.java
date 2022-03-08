@@ -1,4 +1,4 @@
-package com.tc_liuyj;
+package com.tc_liuyj.class01;
 
 /**
  * 插入排序
