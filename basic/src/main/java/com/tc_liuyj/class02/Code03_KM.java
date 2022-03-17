@@ -1,5 +1,11 @@
 package com.tc_liuyj.class02;
 
+import com.alibaba.fastjson.JSONObject;
+import sun.plugin.javascript.JSObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author liuyajie
  * @date 2022/03/08/7:27 下午
@@ -48,7 +54,10 @@ public class Code03_KM {
         return real == k ? ans : -1;
     }
     public static void main(String[] args) {
-
-
+        Map<String, String> map = new HashMap<>();
+        map.put("filename", "1.docx");
+        map.put("fileext", "doc");
+        String str = JSONObject.toJSONString(map);
+        System.out.println(str);
     }
 }
